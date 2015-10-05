@@ -1,0 +1,21 @@
+input.ng-invalid{
+    background: red;
+}
+
+input.ng-untouched{
+    background: none;
+}
+
+
+.margin-top-20 {
+ margin-top: 20px;
+}
+
+
+.left {
+ float: left;
+}
+
+.right{
+    float :right;
+}

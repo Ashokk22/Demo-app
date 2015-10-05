@@ -1,0 +1,9 @@
+{
+  "customers": [{
+    "id" : 1,
+    "name" : "Sanil Naik",
+    "location" : "Pune, india",
+    "emailId" : "saneilnaik11@gmail.com"
+  }
+   ]
+}

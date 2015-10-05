@@ -1,0 +1,55 @@
+<div ui-view>
+
+    <div class="row">
+        <div class="col-xs-6">
+            Customer List
+            <a ng-click="order = order == '-name' ? 'name' : '-name'" class="right" ng-bind="order == '-name' ? 'Asc' : 'Desc'"></a>
+        </div>
+        <div class="col-xs-6">
+            <input type="text" ng-model="search" placeholder="Search by Name">
+            <button class="btn right" ng-click="addCustomer()">Add New</button>
+        </div>
+    </div>
+    <div class="row margin-top-20">
+        <div class="col-xs-6">
+            <div class="panel panel-default" ng-repeat="customer in customers | filter:search| orderBy:order ">
+                <div class="panel-body">
+
+                    <ul ng-click="selectCustomer(customer.id)">
+                       <li>{{customer.name}}</li>
+                        <li>{{customer.emailId}}</li>
+                        <li>{{customer.location}}</li>
+                    </ul>
+                    <a ng-click="removeCustomer(customer.id)" class="right">Remove</a>
+                </div>
+            </div>
+            <div class="panel panel-default" ng-if="!customers.length">
+                <div class="panel-body">
+                    No customers
+                </div>
+            </div>
+
+        </div>
+        <div class="col-xs-6">
+            <div class="panel panel-default" ng-if="customers.length">
+                <div class="panel-heading">Details</div>
+                <div class="panel-body">
+                    <ul>
+                        <li>{{selectedCustomer.name}}</li>
+                        <li>{{selectedCustomer.emailId}}</li>
+                        <li>{{selectedCustomer.location}}</li>
+                    </ul>
+                </div>
+                <div class="panel panel-default" ng-if="!customers.length">
+                    <div class="panel-body">
+                        No customers to select
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
